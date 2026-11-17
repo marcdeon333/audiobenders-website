@@ -1,21 +1,9 @@
 # Cloudflare setup
 
-This repository contains the uploaded V2 storefront. It differs from the site previously served at audiobendersco.com. The root wrangler.jsonc points Workers Static Assets at Audio_Benders_Website_V2; no build step is required.
+Workers serves original-site, restoring the original Audio Benders storefront with templates, beats, mixing services, and the illustrative order dashboard. The V2 folder is retained as an unused alternative.
 
-## Connect GitHub
+Production branch: main. Root directory: repository root. Build command: blank. Deploy command: npx wrangler deploy. Worker name: audiobenders-website.
 
-In GitHub Settings > Applications > Installed GitHub Apps, configure Cloudflare Workers & Pages to allow this repository. In Cloudflare Workers & Pages, select marcdeon333/audiobenders-website.
+The original HTML was recovered from https://audiobendersco.com/. Its referenced assets/studio.jpg returned HTTP 404 on recovery; no substitute image was introduced.
 
-Use these Workers deployment settings:
-
-- Worker name: audiobenders-website (must match wrangler.jsonc)
-- Production branch: main
-- Root directory: repository root (leave default)
-- Build command: blank
-- Deploy command: npx wrangler deploy
-
-First verify the generated workers.dev preview. Connect or migrate audiobendersco.com only after reviewing that preview and identifying the existing Cloudflare project that serves the domain. This repository does not change DNS or attach the domain automatically.
-
-## Payments are not yet connected
-
-The uploaded index.html expects window.ABC_CHECKOUT_LINKS, keyed by product ID, for hosted checkout links. Actual Stripe payment links or a server-side Checkout integration are still needed. Product details and prices are illustrative until verified. Do not place secret API keys in HTML or GitHub; use Cloudflare encrypted secrets for server-side integrations. Digital fulfillment and payment confirmation also require setup before launch.
+Stripe checkout, uploads, order management and automatic digital delivery remain demo placeholders. No secret keys belong in the site or repository. Payment verification and private delivery must be implemented before launch.
